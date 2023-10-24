@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/10/24 15:53:23 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:51:58 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ t_nodestack *create_stack (char **argv)
 	{
 		if (i == 0)
 		{
-			first_node = create_node(i, ft_atoi(argv[i + 1]));
+			first_node = create_node(i, ft_atoi(argv[i]));
 			last_node = first_node;
 		}
 		else
 		{
-			new_node = create_node(i, ft_atoi(argv[i + 1]));
+			new_node = create_node(i, ft_atoi(argv[i]));
 			last_node->next = new_node;
 			new_node->previous = last_node;
 			last_node = new_node;
@@ -51,4 +51,5 @@ t_nodestack *create_node(int index, int value)
 	new_node->value = value;
 	new_node->next = NULL;
 	new_node->previous = NULL;
+	return (new_node);
 }
