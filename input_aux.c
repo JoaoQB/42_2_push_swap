@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/10/24 15:01:35 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:03:57 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ long ft_atoi(const char	*string)
 }
 
 /* Input check for odd characters*/
-void input_validation(char **argv)
+void input_char_validation(char **argv)
 {
 	int	j;
 	int	i;
@@ -59,3 +59,11 @@ void input_validation(char **argv)
 		j++;
 	}
 }
+
+/*void check_stack(t_nodestack *stack)
+{
+	while (stack->next)
+	{
+
+	}
+}*/
