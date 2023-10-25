@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 14:15:50 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/10/24 14:44:35 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/10/25 14:52:12 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,3 +17,5 @@ Popular a lista:
 		new_node(index i, atoi(argv[i]));
 
 Verificar se ha dups ou se esta sorted.
+
+Limpar nodestack.
