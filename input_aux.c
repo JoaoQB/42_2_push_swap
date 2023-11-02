@@ -32,7 +32,7 @@ long ft_atoi(const char	*string)
 	{
 		nbr = (nbr * 10) + (string[i] - '0');
 		if ((nbr * sign) > INT_MAX || (nbr * sign) < INT_MIN)
-			exit(1);
+			exit(1); // error needed
 		i++;
 	}
 	return (nbr * sign);
@@ -53,7 +53,10 @@ void input_char_validation(char **argv)
 			if (argv[j][i] == '+' || argv[j][i] == '-')
 				i++;
 			if (argv[j][i] < '0' || argv[j][i] > '9')
-				exit (1);
+			{
+				printf("Invalid character detected: %c\n", argv[j][i]);
+				exit(1);
+			}
 			i++;
 		}
 		j++;

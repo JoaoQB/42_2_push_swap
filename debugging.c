@@ -37,4 +37,3 @@ void print_stack(t_nodestack *lst)
 	printf("+-------+----------+\n");
 	printf("Stack index: %d\nStack size: %d\n", lst->index, size);
 }
-

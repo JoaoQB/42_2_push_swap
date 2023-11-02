@@ -14,14 +14,17 @@
 
 int	main(int argc, char **argv)
 {
-	t_nodestack	*first;
+	t_nodestack	*a;
+	t_nodestack	*b;
 
+	a = NULL;
+	b = NULL;
+	if (argc < 2)
+		return (0);
 	argv++;
-	if (argc != 1)
-	{
-		first = create_stack(argv);
-		print_stack(first);
-		free(first);
-	}
+	input_char_validation(argv);
+	a = create_stack(argv);
+	print_stack(a);
+	free(a);
 	return (0);
 }

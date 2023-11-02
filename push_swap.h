@@ -33,7 +33,7 @@ typedef struct s_nodestack
 void print_stack(t_nodestack *lst);
 
 /* Input validation and stack creation*/
-long	ft_atoi(const char	*string);
+long ft_atoi(const char	*string);
 void input_char_validation(char **argv);
 t_nodestack *create_node(int index, int value);
 t_nodestack *create_stack (char **argv);
