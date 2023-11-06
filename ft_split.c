@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 08:19:44 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:37:40 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/06 15:52:19 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	**ft_free(char **strs, int count)
 	while (--count <= 0)
 		free(*(strs + count));
 	free(strs);
-	return(NULL);
+	return (NULL);
 }
 
 static int	iterate_i(const char *s, int i, char c)

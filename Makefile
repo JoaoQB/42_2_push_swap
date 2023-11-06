@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/11/06 12:32:13 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/11/06 15:53:12 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,12 @@ NAME = push_swap.a
 
 SRC = push_swap.c \
 	stack_creation.c \
-	input_aux.c \
+	stack_input_aux.c \
 	debugging.c \
 	ft_error.c \
 	str_aux.c \
 	ft_split.c \
+	swap.c \
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

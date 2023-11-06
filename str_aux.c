@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:26:31 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 14:15:54 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/06 15:50:00 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ t_nodestack	*single_argv(char **argv)
 {
 	t_nodestack	*first;
 
+	if (!argv)
+		return (NULL);
 	argv = ft_split(*argv, ' ');
 	input_char_validation(argv);
 	first = create_stack(argv);

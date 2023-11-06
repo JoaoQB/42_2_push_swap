@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_aux.c                                        :+:      :+:    :+:   */
+/*   stack_input_aux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/03 16:09:01 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/06 15:56:45 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	check_sorted(t_nodestack *stack)
 	t_nodestack	*temp;
 
 	temp = stack;
+	if (!temp)
+		exit(1);
 	while (temp->next != NULL)
 	{
 		if (temp->value > temp->next->value)

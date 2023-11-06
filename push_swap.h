@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 14:14:41 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/06 15:47:59 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,10 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 void	ft_free_argv(char **argv);
 t_nodestack	*single_argv(char **argv);
+
+/* Stack movements*/
+void	sa(t_nodestack *a);
+void	sb(t_nodestack *b);
+void	ss(t_nodestack *a, t_nodestack *b);
 
 #endif
