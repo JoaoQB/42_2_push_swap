@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/03 16:03:53 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:14:41 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,23 @@ char	**ft_split(char const *s, char c);
 
 /* Error in input*/
 void	ft_error(char *string);
+
+/* Input check*/
+void	input_char_validation(char **argv);
+int	check_sorted(t_nodestack *stack);
+int	check_duplicate(t_nodestack *stack);
+void	check_stack(t_nodestack *stack);
+
+/* Stack creation and management*/
+long	ft_atoi(const char	*string);
+t_nodestack	*create_node(int index, int value);
+t_nodestack	*create_stack(char **argv);
+void	free_stack(t_nodestack *stack);
+
+/* String aux. functions*/
 size_t	ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+void	ft_free_argv(char **argv);
+t_nodestack	*single_argv(char **argv);
 
 #endif

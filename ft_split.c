@@ -6,13 +6,13 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 08:19:44 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 12:17:55 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:37:40 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	substr_count(char const *s, int c)
+static int	substr_count(const char *s, int c)
 {
 	size_t	count;
 	size_t	in_word;
