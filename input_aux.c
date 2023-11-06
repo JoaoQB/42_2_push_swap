@@ -6,56 +6,30 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/10/24 16:03:57 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:09:01 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Atoi apenas com um check extra de MIN/MAX_INT*/
-long ft_atoi(const char	*string)
-{
-	long	nbr;
-	int		sign;
-	int		i;
-
-	nbr = 0;
-	i = 0;
-	sign = 1;
-
-	while((string[i] >= '\t' && string[i] <= '\r') || string[i] == ' ')
-		i++;
-	if (string[i] == '-' || string[i] == '+')
-		if (string[i++] == '-')
-			sign = -1;
-	while (string[i] >= '0' && string[i] <= '9')
-	{
-		nbr = (nbr * 10) + (string[i] - '0');
-		if ((nbr * sign) > INT_MAX || (nbr * sign) < INT_MIN)
-			exit(1); // error needed
-		i++;
-	}
-	return (nbr * sign);
-}
-
 /* Input check for odd characters*/
-void input_char_validation(char **argv)
+void	input_char_validation(char **argv)
 {
 	int	j;
 	int	i;
 
 	j = 0;
-	i = 0;
 	while (argv[j])
 	{
+		i = 0;
 		while (argv[j][i])
 		{
 			if (argv[j][i] == '+' || argv[j][i] == '-')
 				i++;
 			if (argv[j][i] < '0' || argv[j][i] > '9')
 			{
-				printf("Invalid character detected: %c\n", argv[j][i]);
-				exit(1);
+				printf("Invalid character detected: %c in index %d\n", argv[j][i], i);
+				exit (1); // ft_error needed.
 			}
 			i++;
 		}
@@ -63,10 +37,47 @@ void input_char_validation(char **argv)
 	}
 }
 
-/*void check_stack(t_nodestack *stack)
+/* Check stack to see if it's already sorted*/
+int	check_sorted(t_nodestack *stack)
 {
-	while (stack->next)
-	{
+	t_nodestack	*temp;
 
+	temp = stack;
+	while (temp->next != NULL)
+	{
+		if (temp->value > temp->next->value)
+			return (0);
+		temp = temp->next;
 	}
-}*/
+	return (1);
+}
+
+/* Check stack for duplicates.*/
+int	check_duplicate(t_nodestack *stack)
+{
+	t_nodestack	*temp_i;
+	t_nodestack	*temp_j;
+
+	temp_i = stack;
+	while (temp_i != NULL)
+	{
+		temp_j = temp_i->next;
+		while (temp_j != NULL)
+		{
+			if (temp_i->value == temp_j-> value)
+				return (1);
+			temp_j = temp_j->next;
+		}
+		temp_i = temp_i->next;
+	}
+	return (0);
+}
+
+/* Check stack*/
+void	check_stack(t_nodestack *stack)
+{
+	if (check_sorted(stack))
+		ft_error("Error: Stack is already sorted.\n");
+	else if (check_duplicate(stack))
+		ft_error("Error: There is a duplicate value.\n");
+}

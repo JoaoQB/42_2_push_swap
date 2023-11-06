@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:14:52 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/03 13:50:15 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/11/03 13:45:00 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/11/03 13:47:08 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlen(const char *str)
 {
-	t_nodestack	*a;
+	size_t	i;
 
-	a = NULL;
-	if (argc < 2)
-		return (0);
-	argv++;
-	input_char_validation(argv);
-	a = create_stack(argv);
-	print_stack(a);
-	free(a);
-	return (0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	ft_error(char *string)
+{
+	write(1, string, ft_strlen(string));
+	exit(1);
 }

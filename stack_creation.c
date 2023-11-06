@@ -6,13 +6,52 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/10/24 16:51:58 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:01:41 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_nodestack *create_stack (char **argv)
+/* Atoi apenas com um check extra de MIN/MAX_INT*/
+long	ft_atoi(const char	*string)
+{
+	long	nbr;
+	int		sign;
+	int		i;
+
+	nbr = 0;
+	i = 0;
+	sign = 1;
+	while ((string[i] >= '\t' && string[i] <= '\r') || string[i] == ' ')
+		i++;
+	if (string[i] == '-' || string[i] == '+')
+		if (string[i++] == '-')
+			sign = -1;
+	while (string[i] >= '0' && string[i] <= '9')
+	{
+		nbr = (nbr * 10) + (string[i] - '0');
+		if ((nbr * sign) > INT_MAX || (nbr * sign) < INT_MIN)
+			ft_error("Error: Input has value bigger or smaller than an integer.\n");
+		i++;
+	}
+	return (nbr * sign);
+}
+
+t_nodestack	*create_node(int index, int value)
+{
+	t_nodestack	*new_node;
+
+	new_node = (t_nodestack *)malloc(sizeof(t_nodestack));
+	if (!new_node)
+		return (NULL);
+	new_node->index = index;
+	new_node->value = value;
+	new_node->next = NULL;
+	new_node->previous = NULL;
+	return (new_node);
+}
+
+t_nodestack	*create_stack(char **argv)
 {
 	t_nodestack	*new_node;
 	t_nodestack	*first_node;
@@ -20,7 +59,7 @@ t_nodestack *create_stack (char **argv)
 	int			i;
 
 	i = 0;
-	while(argv[i])
+	while (argv[i])
 	{
 		if (i == 0)
 		{
@@ -36,20 +75,6 @@ t_nodestack *create_stack (char **argv)
 		}
 		i++;
 	}
-	//check_stack if sorted if dups
+	check_stack(first_node);
 	return (first_node);
-}
-
-t_nodestack *create_node(int index, int value)
-{
-	t_nodestack	*new_node;
-
-	new_node = (t_nodestack *)malloc(sizeof(t_nodestack));
-	if (!new_node)
-		return (NULL);
-	new_node->index = index;
-	new_node->value = value;
-	new_node->next = NULL;
-	new_node->previous = NULL;
-	return (new_node);
 }
