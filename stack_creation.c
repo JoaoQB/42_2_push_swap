@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 12:51:27 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:27:39 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,20 @@ void	free_stack(t_nodestack *stack)
 		free(temp);
 	}
 	free(stack);
+}
+
+void	re_index(t_nodestack **a)
+{
+	t_nodestack	*temp;
+	int			i;
+
+	i = 0;
+	if (!*a)
+		return ;
+	temp = *a;
+	while (temp != NULL)
+	{
+		temp->index = i++;
+		temp = temp->next;
+	}
 }
