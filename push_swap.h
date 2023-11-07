@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 15:47:59 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:22:58 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ long	ft_atoi(const char	*string);
 t_nodestack	*create_node(int index, int value);
 t_nodestack	*create_stack(char **argv);
 void	free_stack(t_nodestack *stack);
+void	re_index(t_nodestack **a);
 
 /* String aux. functions*/
 size_t	ft_strlen(const char *str);
@@ -67,5 +68,7 @@ t_nodestack	*single_argv(char **argv);
 void	sa(t_nodestack *a);
 void	sb(t_nodestack *b);
 void	ss(t_nodestack *a, t_nodestack *b);
+void	pa(t_nodestack **source, t_nodestack **dest);
+void	pb(t_nodestack **source, t_nodestack **dest);
 
 #endif
