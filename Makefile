@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/11/07 11:20:30 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/11/08 10:39:27 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = push_swap.c \
 	ft_split.c \
 	swap.c \
 	push.c \
+	rotate.c \
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

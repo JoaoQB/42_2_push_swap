@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/07 13:22:58 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:09:07 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ void	sb(t_nodestack *b);
 void	ss(t_nodestack *a, t_nodestack *b);
 void	pa(t_nodestack **source, t_nodestack **dest);
 void	pb(t_nodestack **source, t_nodestack **dest);
+void	ra(t_nodestack **stack);
+void	rb(t_nodestack **stack);
+void	rr(t_nodestack	**a, t_nodestack **b);
 
 #endif
