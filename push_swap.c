@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:14:52 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/08 10:55:36 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:57:55 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,23 @@ int	main(int argc, char **argv)
 	printf("\n");
 	print_stack(a);
 	print_stack(b);
-	pa(&b, &a);
+	pb(&a, &b);
 	printf("\n");
 	print_stack(a);
 	print_stack(b);
-	sa(a);
+	pb(&a, &b);
 	printf("\n");
 	print_stack(a);
 	print_stack(b);
-	ra(&a);
+	ss(a, b);
+	printf("\n");
+	print_stack(a);
+	print_stack(b);
+	rr(&a, &b);
+	printf("\n");
+	print_stack(a);
+	print_stack(b);
+	rrr(&a, &b);
 	printf("\n");
 	print_stack(a);
 	print_stack(b);
