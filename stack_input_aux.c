@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 15:56:45 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:14:49 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ void	input_char_validation(char **argv)
 			if (argv[j][i] == '+' || argv[j][i] == '-')
 				i++;
 			if (argv[j][i] < '0' || argv[j][i] > '9')
-			{
-				printf("Invalid character detected: %c in index %d\n", argv[j][i], i);
-				exit (1); // ft_error needed.
-			}
+					ft_error("Error: Invalid character detected");
 			i++;
 		}
 		j++;
@@ -82,4 +79,11 @@ void	check_stack(t_nodestack *stack)
 		ft_error("Error: Stack is already sorted.\n");
 	else if (check_duplicate(stack))
 		ft_error("Error: There is a duplicate value.\n");
+}
+
+int	stack_size(t_nodestack *stack)
+{
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack->index + 1);
 }

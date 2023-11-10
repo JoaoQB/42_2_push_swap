@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/08 11:55:08 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:08:09 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	input_char_validation(char **argv);
 int	check_sorted(t_nodestack *stack);
 int	check_duplicate(t_nodestack *stack);
 void	check_stack(t_nodestack *stack);
+int	stack_size(t_nodestack *stack);
 
 /* Stack creation and management*/
 long	ft_atoi(const char	*string);
