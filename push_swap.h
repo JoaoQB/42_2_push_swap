@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/10 11:08:09 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:07:46 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,10 @@ void	rr(t_nodestack	**a, t_nodestack **b);
 void	rra(t_nodestack **stack);
 void	rrb(t_nodestack **stack);
 void	rrr(t_nodestack **a, t_nodestack **b);
+
+/* Sorting functions and aux. functions*/
+t_nodestack	*get_highest(t_nodestack *stack);
+t_nodestack	*get_lowest(t_nodestack *stack);
+void	small_sort(t_nodestack	**stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:14:52 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/10 11:16:43 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:45:31 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,38 +26,14 @@ int	main(int argc, char **argv)
 		a = single_argv(argv);
 	else if (argc > 2)
 		a = create_stack(argv);
-
-
-
-
-
-	  print_stack(a);
-	// print_stack(b);
-	// printf("\n");
-	// pb(&a, &b);
-	// printf("\n");
+	// printf("The highest node is: %d in index %d", get_highest(a)->value, get_highest(a)->index);
 	// print_stack(a);
-	// print_stack(b);
-	// pb(&a, &b);
-	// printf("\n");
+	if (a)
+	{
+		if (stack_size(a) <= 3)
+			small_sort(&a);
+	}
 	// print_stack(a);
-	// print_stack(b);
-	// pb(&a, &b);
-	// printf("\n");
-	// print_stack(a);
-	// print_stack(b);
-	// ss(a, b);
-	// printf("\n");
-	// print_stack(a);
-	// print_stack(b);
-	// rr(&a, &b);
-	// printf("\n");
-	// print_stack(a);
-	// print_stack(b);
-	// rrr(&a, &b);
-	// printf("\n");
-	// print_stack(a);
-	// print_stack(b);
 	free_stack(a);
 	// free_stack(b);
 	return (0);
