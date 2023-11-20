@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 14:15:50 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/11/10 10:57:00 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/11/20 12:09:30 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,3 +26,11 @@ Limpar nodestack.
 
 Tiny Sort:
 	If 3 or less numbers...
+
+Big sort:
+	Push all elements to stack b until stack a = 3.
+	Tiny sort stack A.
+
+	Every node in stack b has a target node in stack a.
+	The target for the node in stack b is the smallest biggest node in stack a.
+		If the node in stack b is bigger than all nodes in stack a, I need to find the lowest in stack a.

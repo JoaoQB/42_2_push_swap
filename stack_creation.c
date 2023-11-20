@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/10 11:15:40 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:18:49 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_nodestack	*create_node(int index, int value)
 	new_node->value = value;
 	new_node->next = NULL;
 	new_node->previous = NULL;
+	new_node->target = NULL;
 	return (new_node);
 }
 
@@ -91,20 +92,4 @@ void	free_stack(t_nodestack *stack)
 		free(temp);
 	}
 	free(stack);
-}
-
-void	re_index(t_nodestack **a)
-{
-	t_nodestack	*temp;
-	int			i;
-
-	i = 0;
-	if (!*a)
-		return ;
-	temp = *a;
-	while (temp != NULL)
-	{
-		temp->index = i++;
-		temp = temp->next;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/10 14:07:46 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/20 13:42:10 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ typedef struct s_nodestack
 	int					index;
 	struct s_nodestack	*next;
 	struct s_nodestack	*previous;
+	struct s_nodestack	*target;
 }	t_nodestack;
 
 /* Debugging*/
 void	print_stack(t_nodestack *lst);
+void	print_stack_target(t_nodestack *lst);
 
 /* Input validation and stack creation*/
 t_nodestack	*create_node(int index, int value);
@@ -50,7 +52,6 @@ void	input_char_validation(char **argv);
 int	check_sorted(t_nodestack *stack);
 int	check_duplicate(t_nodestack *stack);
 void	check_stack(t_nodestack *stack);
-int	stack_size(t_nodestack *stack);
 
 /* Stack creation and management*/
 long	ft_atoi(const char	*string);
@@ -58,6 +59,7 @@ t_nodestack	*create_node(int index, int value);
 t_nodestack	*create_stack(char **argv);
 void	free_stack(t_nodestack *stack);
 void	re_index(t_nodestack **a);
+void	set_target(t_nodestack *a, t_nodestack *b);
 
 /* String aux. functions*/
 size_t	ft_strlen(const char *str);
@@ -81,6 +83,8 @@ void	rrr(t_nodestack **a, t_nodestack **b);
 /* Sorting functions and aux. functions*/
 t_nodestack	*get_highest(t_nodestack *stack);
 t_nodestack	*get_lowest(t_nodestack *stack);
+int	stack_size(t_nodestack *stack);
 void	small_sort(t_nodestack	**stack);
+void	big_sort(t_nodestack **a, t_nodestack **b);
 
 #endif

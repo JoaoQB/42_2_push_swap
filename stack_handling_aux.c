@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:25:10 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/10 14:39:57 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:15:02 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,11 @@ t_nodestack	*get_lowest(t_nodestack *stack)
 		stack = stack->next;
 	}
 	return (lowest);
+}
+
+int	stack_size(t_nodestack *stack)
+{
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack->index + 1);
 }

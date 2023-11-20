@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/10 11:14:49 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:16:07 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,4 @@ void	check_stack(t_nodestack *stack)
 		ft_error("Error: Stack is already sorted.\n");
 	else if (check_duplicate(stack))
 		ft_error("Error: There is a duplicate value.\n");
-}
-
-int	stack_size(t_nodestack *stack)
-{
-	while (stack->next != NULL)
-		stack = stack->next;
-	return (stack->index + 1);
 }

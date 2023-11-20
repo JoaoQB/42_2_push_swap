@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/11/10 15:23:33 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/11/20 12:15:55 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRC = push_swap.c \
 	rotate.c \
 	reverse_rotate.c \
 	small_sort.c \
-	sort_aux.c \
+	stack_handling_aux.c \
+	big_sort.c \
+	stack_handling.c \
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
