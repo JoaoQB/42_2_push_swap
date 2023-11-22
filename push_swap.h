@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/20 13:42:10 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:55:56 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_nodestack
 {
 	int					value;
 	int					index;
+	int					position;
+	int					cost;
 	struct s_nodestack	*next;
 	struct s_nodestack	*previous;
 	struct s_nodestack	*target;
@@ -58,8 +60,11 @@ long	ft_atoi(const char	*string);
 t_nodestack	*create_node(int index, int value);
 t_nodestack	*create_stack(char **argv);
 void	free_stack(t_nodestack *stack);
-void	re_index(t_nodestack **a);
+void	re_index(t_nodestack *a);
 void	set_target(t_nodestack *a, t_nodestack *b);
+void	set_position(t_nodestack *stack);
+void	set_cost(t_nodestack *stack);
+void	set_all(t_nodestack *stack);
 
 /* String aux. functions*/
 size_t	ft_strlen(const char *str);

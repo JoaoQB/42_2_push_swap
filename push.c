@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:19:11 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/07 13:50:45 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:15:35 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	pa(t_nodestack **source, t_nodestack **dest)
 {
 	push(source, dest);
 	write(1, "pa\n", 3);
-	re_index(source);
-	re_index(dest);
+	set_all(*source);
+	set_all(*dest);
 }
 
 void	pb(t_nodestack **source, t_nodestack **dest)
 {
 	push(source, dest);
 	write(1, "pb\n", 3);
-	re_index(source);
-	re_index(dest);
+	set_all(*source);
+	set_all(*dest);
 }
 

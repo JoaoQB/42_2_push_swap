@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:14:52 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/20 13:43:03 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:18:43 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(int argc, char **argv)
 		a = single_argv(argv);
 	else if (argc > 2)
 		a = create_stack(argv);
-	print_stack(a);
 	if (a)
 	{
 		if (stack_size(a) <= 3)

@@ -6,21 +6,21 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:13:42 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/20 14:51:34 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:55:41 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	re_index(t_nodestack **a)
+void	re_index(t_nodestack *a)
 {
 	t_nodestack	*temp;
 	int			i;
 
 	i = 0;
-	if (!*a)
+	if (!a)
 		return ;
-	temp = *a;
+	temp = a;
 	while (temp != NULL)
 	{
 		temp->index = i++;
@@ -57,4 +57,45 @@ void	set_target(t_nodestack *a, t_nodestack *b)
 		b->target = target;
 		b = b->next;
 	}
+}
+
+void	set_position(t_nodestack *stack)
+{
+	int	lenght;
+
+	lenght = stack_size(stack);
+	if (!stack)
+		return;
+	while (stack)
+	{
+		if (stack->index <= lenght / 2)
+			stack->position = 1;
+		else if (stack->index > lenght / 2)
+			stack->position = 2;
+		stack = stack->next;
+	}
+}
+
+void	set_cost(t_nodestack *stack)
+{
+	int	lenght;
+
+	lenght	= stack_size(stack);
+	if (!stack)
+		return;
+	while (stack)
+	{
+		if (stack->position == 1)
+			stack->cost = stack->index;
+		else if (stack->position == 2)
+			stack->cost = lenght - stack->index;
+		stack = stack->next;
+	}
+}
+
+void	set_all(t_nodestack *stack)
+{
+	re_index(stack);
+	set_position(stack);
+	set_cost(stack);
 }

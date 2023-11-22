@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:07:54 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/20 13:42:20 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/22 22:08:25 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,20 @@ void	print_stack(t_nodestack *lst)
         return;
     }
 
-    printf("+-------+----------+\n");
-    printf("| Value | Index    |\n");
-    printf("+-------+----------+\n");
-
-    tmp = lst;
-
-    while (tmp)
-    {
-        printf("| %-5d | %-8d |\n", tmp->value, tmp->index);
-        tmp = tmp->next;
-        size += 1;
-    }
-
-    printf("+-------+----------+\n");
-    printf("Stack index: %d\nStack size: %d\n", lst->index, size);
+	printf("+-------+---------+----------+--------+\n");
+	printf("| Value |  Index  | Position | Cost   |\n");
+	printf("+-------+---------+----------+--------+\n");
+	tmp = lst;
+	size = 0;
+	while (tmp)
+	{
+		printf("| %-5d | %-7d | %-8d | %-6d |\n",
+		tmp->value, tmp->index, tmp->position, tmp->cost);
+		tmp = tmp->next;
+		size += 1;
+	}
+	printf("+-------+---------+----------+--------+\n");
+	printf("Stack index: %d\nStack size: %d\n", lst->index, size);
 }
 
 void	print_stack_target(t_nodestack *lst)
@@ -52,19 +51,18 @@ void	print_stack_target(t_nodestack *lst)
 		printf("List is empty\n");
 		return;
 	}
-	printf("+-------+----------+--------+\n");
-	printf("| Value | Index    | Target |\n");
-	printf("+-------+----------+--------+\n");
+	printf("+-------+---------+----------+--------+--------+\n");
+	printf("| Value |  Index  | Position | Cost   | Target |\n");
+	printf("+-------+---------+----------+--------+--------+\n");
 	tmp = lst;
 	size = 0;
 	while (tmp)
 	{
-		printf("| %-5d | %-8d | %-6d |\n",
-		tmp->value, tmp->index, tmp->target->value);
+		printf("| %-5d | %-7d | %-8d | %-6d | %-6d |\n",
+		tmp->value, tmp->index, tmp->position, tmp->cost, tmp->target->value);
 		tmp = tmp->next;
 		size += 1;
 	}
-	printf("+-------+----------+-------+--------+--------+\n");
+	printf("+-------+---------+----------+--------+--------+\n");
 	printf("Stack index: %d\nStack size: %d\n", lst->index, size);
 }
-

@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:39:16 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/08 11:07:59 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:16:43 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	ra(t_nodestack **stack)
 {
 	rotate(stack);
 	write(1, "ra\n", 3);
-	re_index(stack);
+	set_all(*stack);
 }
 
 void	rb(t_nodestack **stack)
 {
 	rotate(stack);
 	write(1, "rb\n", 3);
-	re_index(stack);
+	set_all(*stack);
 }
 
 void	rr(t_nodestack	**a, t_nodestack **b)
@@ -46,6 +46,6 @@ void	rr(t_nodestack	**a, t_nodestack **b)
 	rotate(a);
 	rotate(b);
 	write(1, "rr\n", 3);
-	re_index(a);
-	re_index(b);
+	set_all(*a);
+	set_all(*b);
 }
