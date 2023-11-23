@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:13:42 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 12:48:12 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:22:16 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	set_position(t_nodestack *stack)
 {
 	int	lenght;
 
-	lenght = stack_size(stack);
 	if (!stack)
-		return;
+		return ;
+	lenght = stack_size(stack);
 	while (stack)
 	{
 		if (stack->index <= lenght / 2)
@@ -33,9 +33,9 @@ void	set_cost(t_nodestack *stack)
 {
 	int	lenght;
 
-	lenght	= stack_size(stack);
 	if (!stack)
-		return;
+		return ;
+	lenght = stack_size(stack);
 	while (stack)
 	{
 		if (stack->position == 1)
@@ -53,7 +53,7 @@ void	set_all(t_nodestack *stack)
 	set_cost(stack);
 }
 
-void	set_target_pushcost(t_nodestack *a, t_nodestack *b)
+void	set_target(t_nodestack *a, t_nodestack *b)
 {
 	t_nodestack	*current;
 	t_nodestack	*target;
@@ -62,14 +62,11 @@ void	set_target_pushcost(t_nodestack *a, t_nodestack *b)
 	{
 		current = a;
 		target = NULL;
-		while (current)
+		if (b->value > get_highest(a)->value)
+			target = get_lowest(a);
+		else
 		{
-			if (b->value > get_highest(a)->value)
-			{
-				target = get_lowest(a);
-				break;
-			}
-			else
+			while (current)
 			{
 				if (current->value > b->value)
 				{
@@ -80,7 +77,6 @@ void	set_target_pushcost(t_nodestack *a, t_nodestack *b)
 			}
 		}
 		b->target = target;
-		b->push_price = get_push_cost(b);
 		b = b->next;
 	}
 }
@@ -89,5 +85,6 @@ void	reset_stacks(t_nodestack *a, t_nodestack *b)
 {
 	set_all(a);
 	set_all(b);
-	set_target_pushcost(a, b);
+	set_target(a, b);
+	set_push_cost(b);
 }

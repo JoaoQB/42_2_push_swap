@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:25:10 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 12:44:47 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:37:31 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int	get_push_cost(t_nodestack *node)
 {
 	int	push_cost;
 
-	if ((node->position == 1 && node->target->position == 1) ||
-		(node->position == 2 && node->target->position == 2))
+	if ((node->position == 1 && node->target->position == 1)
+		|| (node->position == 2 && node->target->position == 2))
 	{
 		if (node->cost >= node->target->cost)
 			push_cost = node->cost;

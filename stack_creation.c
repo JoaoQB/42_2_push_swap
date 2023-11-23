@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/22 21:02:57 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:08:17 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long	ft_atoi(const char	*string)
 	{
 		nbr = (nbr * 10) + (string[i] - '0');
 		if ((nbr * sign) > INT_MAX || (nbr * sign) < INT_MIN)
-			ft_error("Error: Input has value bigger or smaller than an integer.\n");
+			ft_error("Error\n");
 		i++;
 	}
 	return (nbr * sign);

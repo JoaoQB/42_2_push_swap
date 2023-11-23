@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:19:11 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/22 21:15:35 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:16:40 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@ void	pb(t_nodestack **source, t_nodestack **dest)
 	set_all(*source);
 	set_all(*dest);
 }
-
