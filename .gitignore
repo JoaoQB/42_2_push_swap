@@ -13,3 +13,7 @@ checker_linux_checker
 /push_swap_tester
 /push_swap_visualizer
 err.log
+checker_linux
+push_swap_test_linux.sh
+/Push-Swap-Tester
+traces.txt
