@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 10:53:09 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 18:24:56 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:58:00 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ void	set_push_cost(t_nodestack *b)
 {
 	while (b)
 	{
-		// printf("push price is: %d\n", b->push_price);
 		b->push_price = get_push_cost(b);
-		// printf("push price is: %d\n", b->push_price);
 		b = b->next;
 	}
 }
@@ -46,7 +44,6 @@ void	rotate_both(t_nodestack **a, t_nodestack **b, t_nodestack *cheap)
 		else if (cheap->position == 2 && cheap->target->position == 2)
 			rrr(a, b);
 	}
-	// reset_stacks(*a, *b);
 }
 
 void	rotate_to_top(t_nodestack **a, t_nodestack **b, t_nodestack *cheapest)
@@ -65,7 +62,6 @@ void	rotate_to_top(t_nodestack **a, t_nodestack **b, t_nodestack *cheapest)
 		else if (cheapest->position == 2)
 			rrb(b);
 	}
-	// reset_stacks(*a, *b);
 }
 
 void	move_nodes(t_nodestack **a, t_nodestack **b)
