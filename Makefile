@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/11/23 13:14:50 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/11/24 12:04:38 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = push_swap.a
 SRC = push_swap.c \
 	stack_creation.c \
 	stack_input_aux.c \
-	debugging.c \
 	ft_error.c \
 	str_aux.c \
 	ft_split.c \
