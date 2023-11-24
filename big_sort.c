@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:48:50 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 18:31:57 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:00:13 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,10 @@ void	big_sort(t_nodestack **a, t_nodestack **b)
 		pb(a, b);
 	small_sort(a);
 	reset_stacks(*a, *b);
-	// print_stack(*a);
-	// print_stack_target(*b);
 	while (*b != NULL)
 	{
 		reset_stacks(*a, *b);
 		move_nodes(a, b);
-		// print_stack(*a);
-		// if (*b)
-			// print_stack_target(*b);
 	}
 	reset_stacks(*a, *b);
 	lowest = get_lowest(*a);
