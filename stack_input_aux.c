@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/24 11:57:38 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:59:50 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	check_duplicate(t_nodestack *stack)
 void	check_stack(t_nodestack *stack)
 {
 	if (check_sorted(stack))
-		ft_error("Error\n");
+		exit(1);
 	else if (check_duplicate(stack))
 		ft_error("Error\n");
 }
