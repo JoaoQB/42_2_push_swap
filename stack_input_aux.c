@@ -6,14 +6,14 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/28 11:59:50 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:22:53 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Input check for odd characters*/
-void	input_char_validation(char **argv)
+int	input_char_validation(char **argv)
 {
 	int	j;
 	int	i;
@@ -27,11 +27,12 @@ void	input_char_validation(char **argv)
 			if (argv[j][i] == '+' || argv[j][i] == '-')
 				i++;
 			if (argv[j][i] < '0' || argv[j][i] > '9')
-				ft_error("Error\n");
+				return (1);
 			i++;
 		}
 		j++;
 	}
+	return (0);
 }
 
 /* Check stack to see if it's already sorted*/
@@ -75,8 +76,8 @@ int	check_duplicate(t_nodestack *stack)
 /* Check stack*/
 void	check_stack(t_nodestack *stack)
 {
-	if (check_sorted(stack))
-		exit(1);
-	else if (check_duplicate(stack))
+	if (check_duplicate(stack))
 		ft_error("Error\n");
+	else if (check_sorted(stack))
+		exit(1);
 }

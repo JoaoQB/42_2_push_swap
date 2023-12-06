@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 16:08:17 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/06 20:07:46 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ t_nodestack	*create_stack(char **argv)
 	int			i;
 
 	i = 0;
-	input_char_validation(argv);
+	if (input_char_validation(argv))
+		ft_error("Error\n");
 	while (argv[i])
 	{
 		if (i == 0)
