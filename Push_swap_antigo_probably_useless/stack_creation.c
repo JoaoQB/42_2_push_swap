@@ -6,14 +6,14 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/07 17:20:02 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/06 20:07:46 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Atoi apenas com um check extra de MIN/MAX_INT*/
-long	ft_atoi(char	*string, t_nodestack *stack, char **argv, int argc)
+long	ft_atoi(const char	*string)
 {
 	long	nbr;
 	int		sign;
@@ -31,7 +31,7 @@ long	ft_atoi(char	*string, t_nodestack *stack, char **argv, int argc)
 	{
 		nbr = (nbr * 10) + (string[i] - '0');
 		if ((nbr * sign) > INT_MAX || (nbr * sign) < INT_MIN)
-			ft_error("Error\n", stack, argv, argc);
+			ft_error("Error\n");
 		i++;
 	}
 	return (nbr * sign);
@@ -52,32 +52,34 @@ t_nodestack	*create_node(int index, int value)
 	return (new_node);
 }
 
-t_nodestack	*create_stack(char **argv, t_nodestack *stack, int argc)
+t_nodestack	*create_stack(char **argv)
 {
-	t_nodestack	*new;
-	t_nodestack	*first;
-	t_nodestack	*last;
+	t_nodestack	*new_node;
+	t_nodestack	*first_node;
+	t_nodestack	*last_node;
 	int			i;
 
 	i = 0;
 	if (input_char_validation(argv))
-		ft_error("Error\n", stack, argv, argc);
+		ft_error("Error\n");
 	while (argv[i])
 	{
 		if (i == 0)
-			first = create_node(i, ft_atoi(argv[i], stack, argv, argc));
+		{
+			first_node = create_node(i, ft_atoi(argv[i]));
+			last_node = first_node;
+		}
 		else
 		{
-			new = create_node(i, ft_atoi(argv[i], first, argv, argc));
-			last = get_last_node(first);
-			last->next = new;
-			new->previous = last;
-			last = new;
+			new_node = create_node(i, ft_atoi(argv[i]));
+			last_node->next = new_node;
+			new_node->previous = last_node;
+			last_node = new_node;
 		}
 		i++;
 	}
-	check_stack(first, argv, argc);
-	return (first);
+	check_stack(first_node);
+	return (first_node);
 }
 
 void	free_stack(t_nodestack *stack)

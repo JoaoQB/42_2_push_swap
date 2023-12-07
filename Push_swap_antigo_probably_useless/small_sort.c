@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:14:52 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/07 16:37:16 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/11/10 12:12:45 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/11/24 13:00:52 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+static void	sort_3(t_nodestack **stack)
 {
-	t_nodestack	*a;
-	t_nodestack	*b;
+	if (*stack == get_highest(*stack))
+		ra(stack);
+	else if ((*stack)->next == get_highest(*stack))
+		rra(stack);
+	if ((*stack)->value > (*stack)->next->value)
+		sa(*stack);
+}
 
-	a = NULL;
-	b = NULL;
-	if (argc < 2)
-		return (0);
-	argv++;
-	if (argc == 2)
-		a = single_argv(argv, a, argc);
-	else if (argc > 2)
-		a = create_stack(argv, a, argc);
-	if (a)
-	{
-		if (stack_size(a) <= 3)
-			small_sort(&a);
-		else
-			big_sort(&a, &b);
-	}
-	free_stack(a);
-	free_stack(b);
-	return (0);
+void	small_sort(t_nodestack	**stack)
+{
+	if (stack_size(*stack) == 2)
+		sa(*stack);
+	else if (stack_size(*stack) == 3)
+		sort_3(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:48 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/07 17:02:27 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:47:48 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,23 @@ void		print_stack_target(t_nodestack *lst);
 /* Input validation and stack creation
 	(stack_creation.c and stack_input_aux.c)*/
 t_nodestack	*create_node(int index, int value);
-t_nodestack	*create_stack(char **argv, t_nodestack *stack, int argc);
-long		ft_atoi(char	*string, t_nodestack *stack, char **argv, int argc);
+t_nodestack	*create_stack(char **argv);
+long		ft_atoi(const char	*string);
 int			input_char_validation(char **argv);
-void		check_stack(t_nodestack *stack, char **argv, int argc);
+void		check_stack(t_nodestack *stack);
 int			check_duplicate(t_nodestack *stack);
 int			check_sorted(t_nodestack *stack);
 void		free_stack(t_nodestack *stack);
 
 /* Error in input*/
-void		cleanup_and_exit(t_nodestack *a, char **argv, int argc);
-void		ft_error(char *string, t_nodestack *a, char **argv, int argc);
+void		ft_error(char *string);
 
 /* String aux. functions (str_aux.c and ft_split.c)*/
 size_t		ft_strlen(const char *str);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 char		**ft_split(char const *s, char c);
 void		ft_free_argv(char **argv);
-t_nodestack	*single_argv(char **argv, t_nodestack *stack, int argc);
+t_nodestack	*single_argv(char **argv);
 
 /* Stack movements (push.c, reverse_rotate.c, rotate.c)*/
 void		sa(t_nodestack *a);

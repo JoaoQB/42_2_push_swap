@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:26:31 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/07 16:36:41 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:18:57 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_free_argv(char **argv)
 	free(argv);
 }
 
-t_nodestack	*single_argv(char **argv, t_nodestack *stack, int argc)
+t_nodestack	*single_argv(char **argv)
 {
 	t_nodestack	*first;
 
@@ -59,7 +59,7 @@ t_nodestack	*single_argv(char **argv, t_nodestack *stack, int argc)
 	argv = ft_split(*argv, ' ');
 	if (!*argv)
 		exit(1);
-	first = create_stack(argv, stack, argc);
+	first = create_stack(argv);
 	ft_free_argv(argv);
 	return (first);
 }
