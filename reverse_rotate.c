@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:10:07 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/22 21:17:01 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:29:52 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,32 @@ static void	reverse_rotate(t_nodestack **stack)
 
 void	rra(t_nodestack **stack)
 {
+	ssize_t	written;
+
 	reverse_rotate(stack);
-	write(1, "rra\n", 4);
+	written = write(1, "rra\n", 4);
+	(void)written;
 	set_all(*stack);
 }
 
 void	rrb(t_nodestack **stack)
 {
+	ssize_t	written;
+
 	reverse_rotate(stack);
-	write(1, "rrb\n", 4);
+	written = write(1, "rrb\n", 4);
+	(void)written;
 	set_all(*stack);
 }
 
 void	rrr(t_nodestack **a, t_nodestack **b)
 {
+	ssize_t	written;
+
 	reverse_rotate(a);
 	reverse_rotate(b);
-	write(1, "rrr\n", 4);
+	written = write(1, "rrr\n", 4);
+	(void)written;
 	set_all(*a);
 	set_all(*b);
 }

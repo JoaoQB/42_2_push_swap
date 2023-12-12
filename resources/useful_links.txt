@@ -11,6 +11,9 @@ Radix Sort
 https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 The Turk Algorithm.
 
+https://medium.com/@ulysse.gerkens/push-swap-in-less-than-4200-operations-c292f034f6c0
+Less then 4200 moves.
+
 https://www.youtube.com/watch?v=OaG81sDEpVk
 push_swap : a performant sorting algorithm using 2 stacks (100-630 moves | 500-5470 moves)
 

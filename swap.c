@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:10:19 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/06 16:05:14 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:22:35 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,48 @@ static void	swap(t_nodestack *first)
 
 void	sa(t_nodestack *a)
 {
+	ssize_t	written;
+
 	swap(a);
-	write(1, "sa\n", 3);
+	written = write(1, "sa\n", 3);
+	(void)written;
 }
 
 void	sb(t_nodestack *b)
 {
+	ssize_t	written;
+
 	swap(b);
-	write(1, "sb\n", 3);
+	written = write(1, "sb\n", 3);
+	(void)written;
 }
 
 void	ss(t_nodestack *a, t_nodestack *b)
 {
+	ssize_t	written;
+	
 	swap(a);
 	swap(b);
-	write(1, "ss\n", 3);
+	written = write(1, "ss\n", 3);
+	(void)written;
 }
+//
+// void	sa(t_nodestack *b)
+// {
+	// swap(a);
+	// write(1, "sa\n", 3);
+// }
+//
+// void	sb(t_nodestack *b)
+// {
+	// swap(b);
+	// write(1, "sb\n", 3);
+// }
+//
+// void	ss(t_nodestack *a, t_nodestack *b)
+// {
+	// swap(a);
+	// swap(b);
+	// write(1, "ss\n", 3);
+// }
+//

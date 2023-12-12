@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:04:02 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/07 17:17:33 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:09:18 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,17 +74,25 @@ int	check_duplicate(t_nodestack *stack)
 }
 
 /* Check stack*/
+// void	check_stack(t_nodestack *stack, char **argv, int argc)
+// {
+// 	if (check_duplicate(stack))
+// 		ft_error("Error\n", stack, argv, argc);
+// 	else if (check_sorted(stack))
+// 	{
+// 		free_stack(stack);
+// 		if (argc == 2)
+// 			ft_free_argv(argv);
+// 		exit(1);
+// 	}
+// }
+
 void	check_stack(t_nodestack *stack, char **argv, int argc)
 {
 	if (check_duplicate(stack))
 		ft_error("Error\n", stack, argv, argc);
 	else if (check_sorted(stack))
-	{
-		free_stack(stack);
-		if (argc == 2)
-			ft_free_argv(argv);
-		exit(1);
-	}
+		ft_error("", stack, argv, argc);
 }
 
 t_nodestack	*get_last_node(t_nodestack *stack)

@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/12/12 13:02:46 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/12/12 18:12:11 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC = push_swap.c \
 	stack_sorting.c \
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -O3 -Wall -Wextra -Werror
 
 OBJ = $(SRC:.c=.o)
 

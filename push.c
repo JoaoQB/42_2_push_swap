@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:19:11 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 16:16:40 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:36:18 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,40 @@ static void	push(t_nodestack **source, t_nodestack **dest)
 		(*source)->previous = NULL;
 }
 
+// void	pa(t_nodestack **source, t_nodestack **dest)
+// {
+// 	push(source, dest);
+// 	write(1, "pa\n", 3);
+// 	set_all(*source);
+// 	set_all(*dest);
+// }
+
+// void	pb(t_nodestack **source, t_nodestack **dest)
+// {
+// 	push(source, dest);
+// 	write(1, "pb\n", 3);
+// 	set_all(*source);
+// 	set_all(*dest);
+// }
+
 void	pa(t_nodestack **source, t_nodestack **dest)
 {
+	ssize_t	written;
+
 	push(source, dest);
-	write(1, "pa\n", 3);
+	written = write(1, "pa\n", 3);
+	(void)written;
 	set_all(*source);
 	set_all(*dest);
 }
 
 void	pb(t_nodestack **source, t_nodestack **dest)
 {
+	ssize_t	written;
+
 	push(source, dest);
-	write(1, "pb\n", 3);
+	written = write(1, "pb\n", 3);
+	(void)written;
 	set_all(*source);
 	set_all(*dest);
 }
