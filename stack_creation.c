@@ -6,13 +6,12 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/07 17:20:02 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:08:19 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Atoi apenas com um check extra de MIN/MAX_INT*/
 long	ft_atoi(char	*string, t_nodestack *stack, char **argv, int argc)
 {
 	long	nbr;
