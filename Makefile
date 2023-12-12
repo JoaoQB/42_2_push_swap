@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/12/06 19:08:22 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/12/12 13:02:46 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ CFLAGS = -Wall -Wextra -Werror
 OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)
-	ar -rcs $@ $(OBJ)
 	cc -o push_swap $(OBJ)
 
 all: $(NAME)
