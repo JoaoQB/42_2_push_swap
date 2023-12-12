@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:26:31 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/12 17:52:03 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:04:28 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,7 @@ t_nodestack	*single_argv(char **argv, t_nodestack *stack, int argc)
 		return (NULL);
 	argv = ft_split(*argv, ' ');
 	if (!*argv)
-	{
-		free(argv);
-		exit(1);
-	}
+		ft_error("Error\n", stack, argv, argc);
 	first = create_stack(argv, stack, argc);
 	ft_free_argv(argv);
 	return (first);
