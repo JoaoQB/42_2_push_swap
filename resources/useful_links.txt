@@ -13,3 +13,11 @@ The Turk Algorithm.
 
 https://www.youtube.com/watch?v=OaG81sDEpVk
 push_swap : a performant sorting algorithm using 2 stacks (100-630 moves | 500-5470 moves)
+
+https://github.com/Vinni-Cedraz/push_swap_averager
+
+https://github.com/laisarena/push_swap_tester
+
+https://github.com/LeoFu9487/push_swap_tester
+
+https://github.com/o-reo/push_swap_visualizer
