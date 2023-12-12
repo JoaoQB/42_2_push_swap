@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:01:37 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/24 13:14:43 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:10:37 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,24 @@ void		print_stack_target(t_nodestack *lst);
 /* Input validation and stack creation
 	(stack_creation.c and stack_input_aux.c)*/
 t_nodestack	*create_node(int index, int value);
-t_nodestack	*create_stack(char **argv);
-long		ft_atoi(const char	*string);
-void		input_char_validation(char **argv);
-void		check_stack(t_nodestack *stack);
+t_nodestack	*create_stack(char **argv, t_nodestack *stack, int argc);
+long		ft_atoi(char	*string, t_nodestack *stack, char **argv, int argc);
+int			input_char_validation(char **argv);
+void		check_stack(t_nodestack *stack, char **argv, int argc);
 int			check_duplicate(t_nodestack *stack);
 int			check_sorted(t_nodestack *stack);
 void		free_stack(t_nodestack *stack);
 
 /* Error in input*/
-void		ft_error(char *string);
+void		cleanup_and_exit(t_nodestack *a, char **argv, int argc);
+void		ft_error(char *string, t_nodestack *a, char **argv, int argc);
 
 /* String aux. functions (str_aux.c and ft_split.c)*/
 size_t		ft_strlen(const char *str);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 char		**ft_split(char const *s, char c);
 void		ft_free_argv(char **argv);
-t_nodestack	*single_argv(char **argv);
+t_nodestack	*single_argv(char **argv, t_nodestack *stack, int argc);
 
 /* Stack movements (push.c, reverse_rotate.c, rotate.c)*/
 void		sa(t_nodestack *a);
@@ -75,6 +76,7 @@ void		rrr(t_nodestack **a, t_nodestack **b);
 	(small_sort.c, big_sort.c, stack_handling_aux.c, stack_sorting.c)*/
 t_nodestack	*get_highest(t_nodestack *stack);
 t_nodestack	*get_lowest(t_nodestack *stack);
+t_nodestack	*get_last_node(t_nodestack *stack);
 int			get_push_cost(t_nodestack *node);
 int			stack_size(t_nodestack *stack);
 void		re_index(t_nodestack *a);
@@ -94,10 +96,18 @@ void		reset_stacks(t_nodestack *a, t_nodestack *b);
 
 #endif
 
-void	ft_error(char *string)
+void	cleanup_and_exit(t_nodestack *a, char **argv, int argc)
+{
+	free_stack(a);
+	if (argc == 2)
+		ft_free_argv(argv);
+	exit (1);
+}
+
+void	ft_error(char *string, t_nodestack *a, char **argv, int argc)
 {
 	write(2, string, ft_strlen(string));
-	exit(1);
+	cleanup_and_exit(a, argv, argc);
 }
 
 /* Ft_split, normally one page only.*/
@@ -373,8 +383,7 @@ void	big_sort(t_nodestack **a, t_nodestack **b)
 	}
 }
 
-/* Atoi apenas com um check extra de MIN/MAX_INT*/
-long	ft_atoi(const char	*string)
+long	ft_atoi(char	*string, t_nodestack *stack, char **argv, int argc)
 {
 	long	nbr;
 	int		sign;
@@ -392,7 +401,7 @@ long	ft_atoi(const char	*string)
 	{
 		nbr = (nbr * 10) + (string[i] - '0');
 		if ((nbr * sign) > INT_MAX || (nbr * sign) < INT_MIN)
-			ft_error("Error\n");
+			ft_error("Error\n", stack, argv, argc);
 		i++;
 	}
 	return (nbr * sign);
@@ -413,33 +422,32 @@ t_nodestack	*create_node(int index, int value)
 	return (new_node);
 }
 
-t_nodestack	*create_stack(char **argv)
+t_nodestack	*create_stack(char **argv, t_nodestack *stack, int argc)
 {
-	t_nodestack	*new_node;
-	t_nodestack	*first_node;
-	t_nodestack	*last_node;
+	t_nodestack	*new;
+	t_nodestack	*first;
+	t_nodestack	*last;
 	int			i;
 
 	i = 0;
-	input_char_validation(argv);
+	if (input_char_validation(argv))
+		ft_error("Error\n", stack, argv, argc);
 	while (argv[i])
 	{
 		if (i == 0)
-		{
-			first_node = create_node(i, ft_atoi(argv[i]));
-			last_node = first_node;
-		}
+			first = create_node(i, ft_atoi(argv[i], stack, argv, argc));
 		else
 		{
-			new_node = create_node(i, ft_atoi(argv[i]));
-			last_node->next = new_node;
-			new_node->previous = last_node;
-			last_node = new_node;
+			new = create_node(i, ft_atoi(argv[i], first, argv, argc));
+			last = get_last_node(first);
+			last->next = new;
+			new->previous = last;
+			last = new;
 		}
 		i++;
 	}
-	check_stack(first_node);
-	return (first_node);
+	check_stack(first, argv, argc);
+	return (first);
 }
 
 void	free_stack(t_nodestack *stack)
@@ -561,20 +569,22 @@ void	ft_free_argv(char **argv)
 	free(argv);
 }
 
-t_nodestack	*single_argv(char **argv)
+t_nodestack	*single_argv(char **argv, t_nodestack *stack, int argc)
 {
 	t_nodestack	*first;
 
 	if (!argv)
 		return (NULL);
 	argv = ft_split(*argv, ' ');
-	first = create_stack(argv);
+	if (!*argv)
+		exit(1);
+	first = create_stack(argv, stack, argc);
 	ft_free_argv(argv);
 	return (first);
 }
 
 /* Input check for odd characters*/
-void	input_char_validation(char **argv)
+int	input_char_validation(char **argv)
 {
 	int	j;
 	int	i;
@@ -588,11 +598,12 @@ void	input_char_validation(char **argv)
 			if (argv[j][i] == '+' || argv[j][i] == '-')
 				i++;
 			if (argv[j][i] < '0' || argv[j][i] > '9')
-				ft_error("Error\n");
+				return (1);
 			i++;
 		}
 		j++;
 	}
+	return (0);
 }
 
 /* Check stack to see if it's already sorted*/
@@ -634,12 +645,29 @@ int	check_duplicate(t_nodestack *stack)
 }
 
 /* Check stack*/
-void	check_stack(t_nodestack *stack)
+void	check_stack(t_nodestack *stack, char **argv, int argc)
 {
-	if (check_sorted(stack))
-		ft_error("Error\n");
-	else if (check_duplicate(stack))
-		ft_error("Error\n");
+	if (check_duplicate(stack))
+		ft_error("Error\n", stack, argv, argc);
+	else if (check_sorted(stack))
+	{
+		free_stack(stack);
+		if (argc == 2)
+			ft_free_argv(argv);
+		exit(1);
+	}
+}
+
+t_nodestack	*get_last_node(t_nodestack *stack)
+{
+	t_nodestack	*last;
+
+	if (!stack)
+		return (NULL);
+	while (stack->next != NULL)
+		stack = stack->next;
+	last = stack;
+	return (last);
 }
 
 void	set_position(t_nodestack *stack)
@@ -797,9 +825,9 @@ int	main(int argc, char **argv)
 		return (0);
 	argv++;
 	if (argc == 2)
-		a = single_argv(argv);
+		a = single_argv(argv, a, argc);
 	else if (argc > 2)
-		a = create_stack(argv);
+		a = create_stack(argv, a, argc);
 	if (a)
 	{
 		if (stack_size(a) <= 3)
