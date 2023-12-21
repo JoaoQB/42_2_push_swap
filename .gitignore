@@ -22,4 +22,5 @@ tester.sh
 /pushswap-averager
 /push_swap_averager
 /push_swap_tester_1
+/push_swap_tester_2
 error.log
