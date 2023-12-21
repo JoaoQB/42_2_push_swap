@@ -20,4 +20,6 @@ traces.txt
 /push_swap_tester_3
 tester.sh
 /pushswap-averager
+/push_swap_averager
+/push_swap_tester_1
 error.log
