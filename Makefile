@@ -3,30 +3,36 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/12/12 18:12:11 by jqueijo-         ###   ########.fr        #
+#    Updated: 2024/02/05 13:43:30 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
+SRC_PATH = ./srcs
+ACTIONS = $(SRC_PATH)/actions
+PARSING = $(SRC_PATH)/parsing
+SORT = $(SRC_PATH)/sort
+STRUCT = $(SRC_PATH)/struct
+
 SRC = push_swap.c \
-	stack_creation.c \
-	stack_input_aux.c \
-	ft_error.c \
-	str_aux.c \
-	ft_split.c \
-	swap.c \
-	push.c \
-	rotate.c \
-	reverse_rotate.c \
-	small_sort.c \
-	stack_handling_aux.c \
-	big_sort.c \
-	stack_handling.c \
-	stack_sorting.c \
+	$(PARSING)/stack_input_aux.c \
+	$(PARSING)/ft_error.c \
+	$(PARSING)/str_aux.c \
+	$(PARSING)/ft_split.c \
+	$(STRUCT)/stack_creation.c \
+	$(STRUCT)/stack_handling.c \
+	$(STRUCT)/stack_handling_aux.c \
+	$(ACTIONS)/swap.c \
+	$(ACTIONS)/push.c \
+	$(ACTIONS)/rotate.c \
+	$(ACTIONS)/reverse_rotate.c \
+	$(SORT)/small_sort.c \
+	$(SORT)/big_sort.c \
+	$(SORT)/stack_sorting.c \
 
 CC = cc
 CFLAGS = -O3 -Wall -Wextra -Werror
