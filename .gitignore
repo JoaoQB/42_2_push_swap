@@ -6,7 +6,7 @@
 .gitignore
 .vscode/
 debug
-push_swap
+/push_swap/push_swap
 a.exe
 onepage_code.c
 checker_linux_checker
