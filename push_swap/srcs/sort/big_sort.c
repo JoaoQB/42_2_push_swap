@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:48:50 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/24 12:00:13 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:56:00 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void	big_sort(t_nodestack **a, t_nodestack **b)
 {

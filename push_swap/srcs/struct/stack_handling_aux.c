@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_handling_aux.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:25:10 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 17:37:31 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:56:11 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 t_nodestack	*get_highest(t_nodestack *stack)
 {

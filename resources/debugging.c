@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   debugging.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:07:54 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/23 12:25:08 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:53:14 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap/include/push_swap.h"
 
 /* Print stack functions, useful but cannot be included in the project due to the use of printf*/
 

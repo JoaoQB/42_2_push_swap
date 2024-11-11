@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_creation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:53:18 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/12 17:54:16 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:56:09 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 long	ft_atoi(char	*string, t_nodestack *stack, char **argv, int argc)
 {

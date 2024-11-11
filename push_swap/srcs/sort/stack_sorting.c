@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_sorting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 10:53:09 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/11/24 11:58:00 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:56:06 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 t_nodestack	*get_cheapest(t_nodestack *stack)
 {

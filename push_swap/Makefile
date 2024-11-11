@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 16:17:47 by jqueijo-          #+#    #+#              #
-#    Updated: 2024/02/05 13:43:30 by jqueijo-         ###   ########.fr        #
+#    Updated: 2024/11/11 11:50:48 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ PARSING = $(SRC_PATH)/parsing
 SORT = $(SRC_PATH)/sort
 STRUCT = $(SRC_PATH)/struct
 
-SRC = push_swap.c \
+SRC = main.c \
 	$(PARSING)/stack_input_aux.c \
 	$(PARSING)/ft_error.c \
 	$(PARSING)/str_aux.c \

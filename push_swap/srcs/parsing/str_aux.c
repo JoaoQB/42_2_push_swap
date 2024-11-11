@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   str_aux.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:26:31 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/12/12 18:44:02 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:55:51 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 size_t	ft_strlen(const char *str)
 {
